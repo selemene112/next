@@ -1,6 +1,6 @@
 import React from 'react';
 import Template from '@/Components/Template/Auth';
-import LoginForm from '@/Components/Organisme/FormLogin';
+import LoginForm from '@/Components/Organisme/LoginFrom';
 
 function LoginPage() {
   return (
