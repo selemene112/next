@@ -4,7 +4,7 @@ import LoginForm from '@/Components/Organisme/LoginFrom';
 
 function LoginPage() {
   return (
-    <Template>
+    <Template loginText="Login">
       <LoginForm />
     </Template>
   );

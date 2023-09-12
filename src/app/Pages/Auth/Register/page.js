@@ -3,7 +3,7 @@ import Template from '@/Components/Template/Auth';
 import RegisterFrom from '@/Components/Organisme/RegisterFrom';
 function RegisterPage() {
   return (
-    <Template>
+    <Template loginText="Register">
       <RegisterFrom />
     </Template>
   );

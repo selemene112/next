@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import './Login.css';
 
-function Template({ children }) {
+function Template({ children, loginText }) {
   return (
     <div className="login">
       <div className="row h-100">
@@ -12,7 +12,7 @@ function Template({ children }) {
         </div>
 
         <div className="col-md-6 bg-white d-flex align-items-center position-relative">
-          <img alt="Illustration" src="illustration.svg" className="position-absolute translate-middle" style={{ zIndex: 2, top: '30px', left: '10vh' }} />
+          <img alt="Illustration" src="/illustration.svg" className="position-absolute translate-middle" style={{ zIndex: 2, top: '30px', left: '10vh' }} />
           <h3 className="position-absolute translate-middle" style={{ zIndex: 2, top: '30px', left: '20vh' }}>
             Ankasa
           </h3>
@@ -20,7 +20,7 @@ function Template({ children }) {
           <div className="container">
             <div className="row">
               <div className="col-md-6 offset-md-3">
-                <h2 className="text-center">Login</h2>
+                <h2 className="text-center">{loginText}</h2>
                 {children}
                 <div className="mb-3">
                   <br />
