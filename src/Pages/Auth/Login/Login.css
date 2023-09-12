@@ -1,0 +1,13 @@
+.login {
+  background-color: #ffffff;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.illustration {
+  position: absolute;
+  top: 10px; /* Mengatur batas atas */
+  right: 10px; /* Mengatur jarak dari tepi kanan */
+  max-width: 100%; /* Membuat gambar tidak melebihi lebar kontainer */
+}
