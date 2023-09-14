@@ -1,6 +1,8 @@
+'use client';
+import { useRouter } from 'next/router';
 import React from 'react';
-import Template from '@/Components/Template/Auth';
-import LoginForm from '@/Components/Organisme/LoginFrom';
+import Template from '@/app/Components/Template/Auth';
+import LoginForm from '@/app/Components/Organisme/LoginFrom';
 
 function LoginPage() {
   return (

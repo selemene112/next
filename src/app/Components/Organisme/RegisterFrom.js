@@ -1,6 +1,6 @@
 import React from 'react';
-import FormInput from '@/Components/Fragment/FormInput';
-import Button from '@/Components/Elements/Button';
+import FormInput from '@/app/Components/Fragment/FormInput';
+import Button from '@/app/Components/Elements/Button';
 
 function RegisterFrom() {
   return (

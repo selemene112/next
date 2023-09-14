@@ -1,6 +1,6 @@
 import React from 'react';
-import Template from '@/Components/Template/Auth';
-import Forget from '@/Components/Organisme/ForgetPassword';
+import Template from '@/app/Components/Template/Auth';
+import Forget from '@/app/Components/Organisme/ForgetPassword';
 
 function ForgetPage() {
   return (
