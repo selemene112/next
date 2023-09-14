@@ -37,7 +37,7 @@ function LoginForm() {
 
       if (response.ok) {
         console.log('Login berhasil');
-        router.push('/Pages');
+       console.log(response.json())
       } else {
         console.error('Login gagal');
         console.log(formData);

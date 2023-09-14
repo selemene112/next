@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Template from '@/app/Components/Template/Auth';
 import RegisterFrom from '@/app/Components/Organisme/RegisterFrom';
