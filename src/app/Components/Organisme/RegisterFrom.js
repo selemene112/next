@@ -37,7 +37,8 @@ function RegisterFrom() {
 
       if (response.ok) {
         console.log('Login berhasil');
-        console.log(response.json())
+        console.log(response.json());
+        router.push('/Pages/Auth/Login');
       } else {
         console.error('Login gagal');
         console.log(formData);
