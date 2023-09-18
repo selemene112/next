@@ -1,0 +1,42 @@
+'use client';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import Link from 'next/link';
+
+function NavbarComponent() {
+  const token = localStorage.getItem('Ankasa');
+
+  return (
+    <div className="bg-white">
+      <Navbar expand="lg">
+        <div>
+          <Link href="/">
+            <img src="/illustration.svg" alt="" className="img-fluid" />
+            <label className="text-dark font-weight-bold ml-2">Ankasa</label>
+          </Link>
+        </div>
+
+        <div>
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="search-icon">
+                <img src="/search.svg" alt="Search Icon" />
+              </span>
+            </div>
+            <input type="search" className="form-control border-0 border-bottom shadow-none" placeholder="Where you want to go?" aria-label="Search" name="search" required style={{ borderStyle: 'none', backgroundColor: '#f2f2f2' }} />
+          </div>
+        </div>
+
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            <a href="/Tiket">Find Tiket </a>
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
+}
+
+export default NavbarComponent;

@@ -1,104 +1,93 @@
 'use client';
-import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar';
-
+import React, { useState, useEffect } from 'react';
+import { Navbar, Container, Nav, Form, Button, Offcanvas } from 'react-bootstrap';
 import Link from 'next/link';
 
-function NavbarComponent() {
+function OffcanvasExample() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const token = localStorage.getItem('Ankasa');
 
-  return (
-    <div className=" bg-white">
-      <div className="row d-flex justify-content-between">
-        <div className="col-lg-2 px-3 d-flex align-content-center flex-wrap justify-content-start">
-          <img src="/img/fly.png" alt="logo" style={{ width: '30px', marginRight: '10px' }} />
-          <Link
-            href="/"
-            style={{
-              color: 'black',
-              fontWeight: 'bold',
-              textDecoration: 'none',
-            }}
-          >
-            <h5>Ankasa</h5>
-          </Link>
-        </div>
-        <div className="col-lg-4 d-flex align-content-center flex-wrap">
-          <form>
-            <div className="field has-addons d-flex input-group">
-              <div className="control is-expanded px-3 input-group-text">
-                <button type="submit" className="button is-info form-control-plaintext" style={{ borderRadius: '10px' }}>
-                  <img
-                    src="https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-11640084027s0fkuhz2lb.png"
-                    alt="asas"
-                    style={{
-                      backgroundColor: 'white',
-                      width: '20px',
-                    }}
-                  />
-                </button>
-                <input
-                  type="search"
-                  className=""
-                  // id={id}
-                  // onChange={search}
-                  placeholder="Where you want to go?"
-                  aria-label="Search"
-                  name="search"
-                  required
-                  style={{ borderStyle: 'none' }}
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="col-lg-6 d-flex justify-content-end px-5">
-          <Navbar expand="lg" className="">
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse>
-              <button className="btn">{/* <MydModalWithGrid /> */}</button>
-              <Link href="/MyBooking" style={{ textDecoration: 'none', color: 'black' }} className="px-lg-5 mt-lg-1">
-                <h6> My Booking</h6>
-              </Link>
-              {token ? (
-                <div className=" px-lg-4 d-flex justify-content-end">
-                  {/* <MyModalTicket /> */}
-                  <MyVerticallyCenteredModal />
-                  <Button variant="white" style={{ width: '4rem' }}>
-                    <Link href="/profile">
-                      <img
-                        src={profile.photo}
-                        alt=""
-                        style={{
-                          verticalAlign: 'middle',
-                          height: '40px',
-                          borderRadius: '50%',
-                          marginLeft: '-5px',
-                        }}
-                      />
-                    </Link>
-                  </Button>
-                </div>
-              ) : (
-                <div className="d-lg-flex d-flex justify-content-end">
-                  <Link href="/login">
-                    <Button id="responsive-navbar-nav" className="btn-1 px-lg-4" variant="primary">
-                      Login
-                    </Button>
-                  </Link>
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-                  <Link href="/auth/register">
-                    <Button className="btn-1  px-lg-4" variant="outline-primary">
-                      Sign Up
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const displayNavbar = windowWidth >= 100;
+
+  return (
+    <>
+      {displayNavbar && (
+        <Navbar expand="lg" className="bg-body-tertiary mb-3">
+          <Container fluid>
+            <Navbar.Brand href="/">
+              <img src="/illustration.svg" alt="Logo" className="img-fluid" />
+              Angkasa
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="offcanvasNavbar" />
+            <Navbar.Collapse id="offcanvasNavbar">
+              <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Form className="d-flex">
+                  <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
+                </Form>
+                <Nav.Link href="/Pages/Auth/Login">Find Tiket</Nav.Link>
+                <Nav.Link href="/Pages/Auth/Register">My Boking</Nav.Link>
+
+                {token ? (
+                  <div className=" px-lg-4 d-flex justify-content-end">
+                    <MyVerticallyCenteredModal />
+                    <Button variant="white" style={{ width: '4rem' }}>
+                      <Link href="/profile">
+                        <img
+                          src={profile.photo}
+                          alt=""
+                          style={{
+                            verticalAlign: 'middle',
+                            height: '40px',
+                            borderRadius: '50%',
+                            marginLeft: '-5px',
+                          }}
+                        />
+                      </Link>
                     </Button>
-                  </Link>
-                </div>
-              )}
+                  </div>
+                ) : (
+                  <div className="d-lg-flex d-flex justify-content-end">
+                    <Link href="/login">
+                      <Button id="responsive-navbar-nav" className="btn-1 px-lg-4" variant="primary">
+                        Login
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+              </Nav>
             </Navbar.Collapse>
-          </Navbar>
-        </div>
-      </div>
-    </div>
+          </Container>
+        </Navbar>
+      )}
+
+      <Offcanvas show={!displayNavbar} placement="end" className="bg-body-tertiary">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Nav className="flex-column">
+            <Form className="d-flex">
+              <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
+            </Form>
+            <Nav.Link href="#action1">Find Tiket</Nav.Link>
+            <Nav.Link href="#action2">My Booking</Nav.Link>
+          </Nav>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 }
-export default NavbarComponent;
+
+export default OffcanvasExample;
