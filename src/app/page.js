@@ -8,8 +8,12 @@ import NavbarComponent from '@/app/Components/Fragment/Navbar';
 import NavbarLogin from './Components/Fragment/NavbarLogin';
 import Footer from './Components/Fragment/Footer';
 import Landing from './Components/Fragment/Landing';
+import Searchresult from '@/app/Components/Organisme/search/search';
+import { Box } from './Components/Organisme/SideBar/SideBar';
+import Ticket from '@/app/Components/Organisme/search/Search1';
+import FixSearch from '@/app/Components/Organisme/search/FixSearch';
 
 function Login() {
-  return <NavbarLogin />;
+  return <FixSearch />;
 }
 export default Login;
