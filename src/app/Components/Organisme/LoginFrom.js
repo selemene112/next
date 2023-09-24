@@ -27,7 +27,7 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://easy-lime-seal-toga.cyclic.app/users/login`, {
+      const response = await fetch(`https://easy-lime-seal-toga.cyclic.app/auth/login`, {
         method: `POST`,
         headers: {
           'Content-Type': 'application/json',
@@ -36,12 +36,22 @@ function LoginForm() {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        const token = data.data.access_token; // Ambil token dari respons API
+
+        // Simpan token ke local storage
+        localStorage.setItem('token', token);
+
+        console.log('Login berhasil');
+        console.log(data);
+        router.push('/');
         console.log('Login berhasil');
         console.log(response.json());
         router.push('/');
       } else {
         console.error('Login gagal');
         console.log(formData);
+        console.log(data);
 
         console.log(response);
       }

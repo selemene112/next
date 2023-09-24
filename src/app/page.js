@@ -12,8 +12,8 @@ import Searchresult from '@/app/Components/Organisme/search/search';
 import { Box } from './Components/Organisme/SideBar/SideBar';
 import Ticket from '@/app/Components/Organisme/search/Search1';
 import FixSearch from '@/app/Components/Organisme/search/FixSearch';
-
+import ProfileCard from '@/app/Components/Organisme/Profil/Profil';
 function Login() {
-  return <FixSearch />;
+  return <Landing />;
 }
 export default Login;

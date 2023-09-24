@@ -27,7 +27,7 @@ function RegisterFrom() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://easy-lime-seal-toga.cyclic.app/users/register`, {
+      const response = await fetch(`https://easy-lime-seal-toga.cyclic.app/auth/register`, {
         method: `POST`,
         headers: {
           'Content-Type': 'application/json',
@@ -38,12 +38,16 @@ function RegisterFrom() {
       if (response.ok) {
         console.log('Login berhasil');
         console.log(response.json());
+        console.log(response);
         router.push('/Pages/Auth/Login');
       } else {
+        const data = await response.json();
         console.error('Login gagal');
         console.log(formData);
 
         console.log(response);
+
+        console.log(data);
       }
     } catch (error) {
       console.error('Terjadi kesalahan', error);

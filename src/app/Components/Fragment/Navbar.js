@@ -6,7 +6,7 @@ import Link from 'next/link';
 function OffcanvasExample() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const token = localStorage.getItem('Ankasa');
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,11 +41,11 @@ function OffcanvasExample() {
 
                 {token ? (
                   <div className=" px-lg-4 d-flex justify-content-end">
-                    <MyVerticallyCenteredModal />
+                    {/* <MyVerticallyCenteredModal /> */}
                     <Button variant="white" style={{ width: '4rem' }}>
-                      <Link href="/profile">
+                      <Link href="/Pages/Books/Profil">
                         <img
-                          src={profile.photo}
+                          src="/profil.svg"
                           alt=""
                           style={{
                             verticalAlign: 'middle',
@@ -59,7 +59,7 @@ function OffcanvasExample() {
                   </div>
                 ) : (
                   <div className="d-lg-flex d-flex justify-content-end">
-                    <Link href="/login">
+                    <Link href="/Pages/Auth/Login">
                       <Button id="responsive-navbar-nav" className="btn-1 px-lg-4" variant="primary">
                         Login
                       </Button>
