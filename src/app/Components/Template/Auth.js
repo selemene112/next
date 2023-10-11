@@ -27,7 +27,7 @@ function Template({ children, loginText }) {
                   <br />
                   <p1 className="text-center">Did you forget your password?</p1>
                   <br />
-                  <Link href="/auth/forgot-password">Tap here for reset</Link>
+                  <Link href="/Pages/Auth/Forget">Tap here for reset</Link>
                 </div>
               </div>
             </div>

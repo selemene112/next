@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+
 import style from './cardStyleTicket.module.css';
 
 const FacilityIcons = {
@@ -7,7 +9,7 @@ const FacilityIcons = {
   wifi: 'https://res.cloudinary.com/dnu5su7ft/image/upload/v1672061667/wifi.png',
 };
 
-const Ticket = ({ logo, airlines_names, facilities, departure_code, interval_time, arrival_code, transit, departure, arrive, price, onClick }) => {
+const Ticket = ({ logo, airlines_names, facilities, departure_code, interval_time, arrival_code, transit, departure, arrive, price, onClick, code }) => {
   const hasFacilities = Array.isArray(facilities) && facilities.length > 0;
   const time = () => {
     if (departure && arrive) {
@@ -60,13 +62,8 @@ const Ticket = ({ logo, airlines_names, facilities, departure_code, interval_tim
               /pax
             </p>
           </div>
-          <button
-            className={style.btnSelect}
-            onClick={onClick}
-            // as={Link}
-            // to={`/DetailFlight?id=${item.id}`}
-          >
-            Select
+          <button className={style.btnSelect}>
+            <Link href={`/Pages/Books/BookingDetailTiket/${code}`}>Select</Link>
           </button>
         </div>
       </div>

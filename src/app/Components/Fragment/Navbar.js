@@ -41,7 +41,6 @@ function OffcanvasExample() {
 
                 {token ? (
                   <div className=" px-lg-4 d-flex justify-content-end">
-                    {/* <MyVerticallyCenteredModal /> */}
                     <Button variant="white" style={{ width: '4rem' }}>
                       <Link href="/Pages/Books/Profil">
                         <img
