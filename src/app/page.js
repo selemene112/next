@@ -18,7 +18,12 @@ import FormContactPerson from './Components/Fragment/BokingTiket/ContactPerson/C
 import TiketbyID from './Components/Fragment/BokingTiket/TiketbyID/TiketbyID';
 import TiketDetailBooking from './Pages/Books/BookingDetailTiket/[code]/page.js';
 import InputBookingTiket from './Components/Organisme/InputBookingTiket/InputBookingTiket';
+import TiketPayment from './Components/Template/TiketPayment/TiketPayment';
+
+import CardPaymentBooking from './Components/Organisme/CardPaymentBooking/page';
+import PaymentBookingPass from './Components/Organisme/PaymentBookingPass/page';
+
 function Login() {
-  return <FixSearch />;
+  return <PaymentBookingPass />;
 }
 export default Login;
