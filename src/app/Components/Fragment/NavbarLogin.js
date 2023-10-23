@@ -37,7 +37,7 @@ function NavbarLogin() {
                   <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
                 </Form>
                 <Nav.Link href="/Pages/Books/SearchTiket">Find Tiket</Nav.Link>
-                <Nav.Link href="/Pages/Auth/Register">My Boking</Nav.Link>
+                <Nav.Link href="/Pages/Profil/MyBooking">My Boking</Nav.Link>
 
                 {token ? (
                   <div className=" px-lg-4 d-flex justify-content-end">

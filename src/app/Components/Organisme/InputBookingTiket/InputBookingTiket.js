@@ -1,8 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import FormInput from '@/app/Components/Fragment/FormInput';
 import Button from '@/app/Components/Elements/Button';
+import Link from 'next/link';
 
 function InputBookingTiket() {
   const router = useRouter();
@@ -18,6 +19,7 @@ function InputBookingTiket() {
     fullname2: ``,
     nationality2: ``,
   });
+  const [BookingCode, setBookingCode] = useState(null);
 
   console.log(formData);
   console.log('ini dari Input', code);
@@ -47,9 +49,11 @@ function InputBookingTiket() {
       if (response.ok) {
         const data = await response.json();
         const token = data.data.access_token;
+        const BookingCode = await data.data.code;
+        setBookingCode(BookingCode);
+        console.log('INI CODE BOOKING' + BookingCode);
 
         // Simpan token ke local storage
-        localStorage.setItem('token', token);
 
         console.log('Make Booking Tiket Succes');
         console.log(data);
@@ -65,6 +69,12 @@ function InputBookingTiket() {
       console.error('Terjadi kesalahan', error);
     }
   };
+
+  useEffect(() => {
+    if (BookingCode) {
+      router.push(`/Pages/Books/PaymentUseMasterCard/${BookingCode}`);
+    }
+  }, [BookingCode]);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -75,6 +85,7 @@ function InputBookingTiket() {
         <FormInput labelFor="Title" type="title2" id="title2" name="title2" value={formData.title2} onChange={handleChange} placeholder="title" />
         <FormInput labelFor="Full Name" type="fullname2" id="fullname2" name="fullname2" value={formData.fullname2} onChange={handleChange} placeholder="Full Name" />
         <FormInput labelFor="Nationality" type="nationality2" id="nationality2" name="nationality2" value={formData.nationality2} onChange={handleChange} placeholder="Nationality" />
+
         <Button type="submit">Proceed to Payment</Button>
       </form>
     </div>

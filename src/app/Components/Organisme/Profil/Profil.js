@@ -63,45 +63,7 @@ const Profile = (props) => {
                 // onChange={handleUploadChange}
               />
             </div>
-            <div className={styles.profileFrom}>
-              <p>Profile</p>
-              <div className={styles.orderTitle}>
-                <div className={styles.titleProfile}>Profile</div>
-              </div>
-              <div className={styles.profileUdpate}>
-                <div className={styles.contact}>
-                  <div>Contact</div>
-                  <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" label="Email" placeholder={profileData.email} className={styles.inputProfile} />
-                    <label htmlFor="phone">Phone Number</label>
-
-                    <input type="text" name="phone" label="Phone Number" placeholder={profileData.phone} className={styles.inputProfile} />
-                    <span>Account Setting</span>
-                  </div>
-                </div>
-                <div className={styles.biodata}>
-                  <div>Biodata</div>
-                  <div>
-                    <label htmlFor="fullname">Full name</label>
-
-                    <input type="text" name="fullname" label="Fullname" placeholder={profileData.fullname} className={styles.inputProfile} />
-                    <label htmlFor="city">City</label>
-
-                    <input type="text" name="city" label="City" placeholder={profileData.city} className={styles.inputProfile} />
-                    <label htmlFor="address">Address</label>
-
-                    <input type="text" name="address" placeholder={profileData.address} className={styles.inputProfile} />
-                    <label htmlFor="poscode">Post Code</label>
-
-                    <input type="text" name="poscode" label="Post Code" placeholder={profileData.poscode} className={styles.inputProfile} />
-                    <button title="Save" className={styles.saveProfile} onClick={(e) => handleData(e)}>
-                      Save
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className={styles.profileFrom}>{props.children}</div>
           </div>
         </form>
       )}

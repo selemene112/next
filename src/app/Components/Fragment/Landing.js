@@ -4,12 +4,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import Carousel from './Crousel';
 
 import Footer from './Footer';
-import NavbarComponent from './Navbar';
+import NavbarLogin from './NavbarLogin';
 
 export default function Landing() {
   return (
     <div className="p-5">
-      <NavbarComponent />
+      <NavbarLogin />
       <div className="row mt-5 d-flex justify-content-between">
         <div className="col-6 ">
           <div className="p-5">
