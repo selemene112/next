@@ -4,18 +4,26 @@ import { Navbar, Container, Nav, Form, Button, Offcanvas } from 'react-bootstrap
 import Link from 'next/link';
 
 function NavbarLogin() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
 
-  const token = localStorage.getItem('token');
+  const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
+  const token = isLocalStorageAvailable ? localStorage.getItem('token') : null;
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    // Tambahkan event listener hanya jika window ada (di sisi klien)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
+
+    // Hapus event listener saat komponen dibongkar
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
 
