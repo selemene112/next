@@ -6,6 +6,18 @@
 <p>
   This App for handle payment tiket
 </p>
+
+<br/>
+    <br/>
+    <a href="https://github.com/selemene112/next"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://next-asn3fv0wk-ariyandas-projects.vercel.app/">View Demo</a>
+    .
+    <a href="https://github.com/selemene112/next/issues">Report Bug</a>
+    .
+    <a href="https://github.com/selemene112/next/issues">Request Feature</a>
+</p>
 </div>
 
 
