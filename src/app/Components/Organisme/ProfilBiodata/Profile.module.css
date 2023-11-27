@@ -46,14 +46,14 @@
 }
 .orderTitle {
   display: flex;
-  justify-content: space-between;
-  /* background-color: aqua; */
+  justify-content: flex-start;
+
   width: 100%;
 }
 .profileUdpate {
   display: flex;
   width: 100%;
-  /* background-color: aquamarine; */
+
   flex-wrap: wrap;
 }
 .contact {

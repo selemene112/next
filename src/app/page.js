@@ -23,8 +23,9 @@ import TiketPayment from './Components/Template/TiketPayment/TiketPayment';
 import CardPaymentBooking from './Components/Organisme/CardPaymentBooking/page';
 import PaymentBookingPass from './Components/Organisme/PaymentBookingPass/page';
 import CardBookingTiketStatus from './Components/Organisme/CardBokingTiketstatus/page';
+import ProfilBiodata from '@/app/Components/Organisme/ProfilBiodata/page';
 
 function Login() {
-  return <CardBookingTiketStatus />;
+  return <Landing />;
 }
 export default Login;
