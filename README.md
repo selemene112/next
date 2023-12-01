@@ -20,9 +20,31 @@
 </p>
 </div>
 
+## Table Of Contents
+
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Installation](#installation)
+- [Contributing](#contributing)
+
+- [Contact](#contact)
 
 
-## Getting Started
+## About The Project
+
+<p align="justify">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ankasa Web project is a front-end web application designed to provide a seamless and user-friendly platform for booking and exploring a diverse range of flight tickets. This project makes use of cutting-edge technologies including Node.js, Next.js, Bootstrap, React-Bootstrap and CSS. Whether you're an avid traveler searching for flight options, planning your next vacation, or just in need of booking assistance, this platform has got you covered.</p>
+
+
+## Built With
+
+This Web was built with some technologies below:
+
+- [Next Js](https://nextjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Bootstrap](https://www.npmjs.com/package/react-bootstrap)
+
+## Installation
 
 First, run the development server:
 
@@ -108,14 +130,28 @@ After we make a booking, we can see several tickets that have been booked in our
 | ------------- |
 | ![CodeTemp.png](https://res.cloudinary.com/dkucquakt/image/upload/v1699865793/Screenshot_from_2023-11-13_16-56-12_n0fnul.png) |
 
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 
 
 In the future, I plan to develop a project to handle payments so that they can be connected directly to the original banking system
 If you are interested in this project further, you can contact me on some of my social media
 
-Email: Ariyanda2107@gmail.com
+## Contact
 
-Linkedin: https://www.linkedin.com/in/muhammad-ariyanda-zulyadiansyah-18141426a/
+- Email : [`Ariyanda2107@gmail.com`](mailto:Ariyanda2107@gmail.com)
+
+- LinkedIn : [`https://www.linkedin.com/in/muhammad-ariyanda-zulyadiansyah-18141426a/`](https://www.linkedin.com/in/muhammad-ariyanda-zulyadiansyah-18141426a/)
+
+- GitHub : [`https://github.com/selemene112`](https://github.com/selemene112)
 
 
 
